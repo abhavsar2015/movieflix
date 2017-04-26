@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp' xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <link href="../style/style.css" type = "text/css" rel="stylesheet"/>
+</head>
+<body data-ng-controller="showController"  >
+
+<div class="h">
+    Movie Flix
+    <div class="container" style="text-align:right;padding-bottom: 40px ;margin-top: -4%;">
+
+        <a href="#/login" class="button" >Log out</a>
+    </div>
+
+
+</div >
+<div class="card card-inverse" >
+    <div class="container">
+        <div class="row row-centered">
+              <div class="panel panel-default">
+<div class="cent"><img class="card-img" style="float-displace: 1ch" src="{{movie.poster}}" alt="Card image">
+    <div class="card-img-overlay">
+        <h4 class="card-title" style="font-weight: bold">{{movie.title}}</h4>
+        <p class="card-text">{{movie.plot}}</p>
+        <p class="card-text"> <label >Awards:</label>{{movie.awards}}</p>
+        <p class="card-text"> <label >Year:</label>{{movie.year}}</p>
+
+        <p class="card-text">   <label >rated:</label>{{movie.rated}}</p>
+        <p class="card-text"> <label >Released:</label>{{movie.released}}</p>
+        <p class="card-text"> <label >Runtime:</label>{{movie.runtime}}</p>
+        <p class="card-text"> <div ng-repeat="mov in movie.genre"><label >Genre:</label>{{mov.genre}}</div></div>
+    <p class="card-text"> <div ng-repeat="mov in movie.director"><label >Directors:</label>{{mov.director}}</div></p>
+    <p class="card-text">  <div ng-repeat="mov in movie.writer"><label >Writer:</label>{{mov.writer}}</div></p>
+    <p class="card-text">  <div ng-repeat="mov in movie.actor"><label >Actors:</label>{{mov.actor}}</div></p>
+    <p class="card-text">   <div ng-repeat="mov in movie.country"><label >Country:</label>{{mov.country}}</div></p>
+
+
+    <p class="card-text">   <label >Meta Score:</label >{{movie.metaScore}}</p>
+    <p class="card-text">    <label >Imdb Rating:</label><input id="input-3" name="input-3" value="{{movie.imdbRating}}" class="rating-loading"></p>
+    <p class="card-text">     <label >Imdb Votes:</label> {{movie.imdbVotes}}</p>
+
+    <p class="card-text"><a href="#/home" class="button">Back</a></p>
+</div>
+
+</div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+        <script src="../js/services/restServices.js"/>
+<script src="../js/controllers/showController.js"></script>
+<script src="../js/routingConfig.js"/>
+            </div></div>
+</div>
+</body>
+</html>

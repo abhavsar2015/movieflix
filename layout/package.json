@@ -1,0 +1,10 @@
+{
+  "name": "movieui",
+  "version": "0.0.1",
+  "description": "ui project for movieflex",
+  "author": "apurv bhavsar",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
