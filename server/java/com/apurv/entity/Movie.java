@@ -19,8 +19,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Feature;
 @Entity
 @Table
-//@NamedQueries({
- //  @NamedQuery(name="Employee.findAll",query="SELECT e FROM Employee e ORDER BY e.psition ASC")})
+@NamedQueries({
+   @NamedQuery(name="Movie.findAll",query="SELECT e FROM Movie e ORDER BY e.title ASC")})
 public class Movie {  
 	
 	
