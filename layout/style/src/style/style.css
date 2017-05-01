@@ -1,0 +1,160 @@
+body {
+
+    background:  no-repeat url("../images/jocker1.jpg") center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 60px;
+    background-color: black;
+    color: black;
+}
+h2{
+    color: red;
+    font-weight: bold;
+}
+span{
+    color: wheat;
+}
+.at{
+    text-decoration:none;
+    color:#cc0000;
+    display:inline-block;
+    text-align:center;
+}
+
+.at.button{
+    background-color:#cc0000;
+    border:1px solid #660000;
+    border-radius:5px;
+    color:#fff;
+    text-align:center;
+    padding:10px 10px 10px 10px;
+}
+.at.button:active,a.button:focus,a.button:hover{
+    background-color:#ee0000;
+    margin-top:auto;
+}
+.at.tbutton:hover{
+    border:1px solid #000000;
+}
+
+label {
+    /* Other styling.. */
+    text-align: right;
+    clear: both;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+.cent{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.h{
+    margin-left: 0px;
+    width: auto;
+    height: 90px;
+    padding: 0px;
+    padding-left:185px;
+    font-size: 35px; color:red;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:1000;
+    opacity: 0.9;
+
+}
+#nav {
+    text-align:right;
+}
+
+#nav li {
+    display:inline-block;
+    vertical-align: middle;
+    margin-top: -10%;
+}
+
+#nav li a {
+    padding-left: 20px;
+    padding-right: 10px;
+    color:lightyellow;
+    padding-top:10px;
+    padding-bottom: 30px;
+
+    text-shadow: red;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    vertical-align: middle;
+    -webkit-transition: all 0.3s ease-in-out;
+    height: 100px;
+
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#nav li a:hover {
+    color: black;
+    background: tomato;
+
+}
+#imaginary_container{
+    margin-top:20%; /* Don't copy this */
+}
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+    border-right:0;
+    box-shadow:0 0 0;
+    border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+.content {
+    width:960px;
+    background: #F0F0F0;
+    border: 1px solid #CCC;
+    height: auto;
+    margin: 40px auto;
+}
+.imgHo {
+    positon: relative;
+    float: left;
+    width:  200px;
+    height: 250px;
+
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    margin-left: 10px;
+    margin-botom: 10px;
+    margin-top:70px;
+}
+
+img {
+
+    height:200px;
+    width: 200px;
+}
+
+.a{
+    margin-left: 10px;
+    margin-botom: 10px;
+    margin-top:70px;
+    positon: relative;
+    float: left;
+    font-size: 15px;
+
+}
+
+.panel-default {
+    opacity: 0.9;
+    margin-top:50px;
+}
+.form-group.last { margin-bottom:0px; }
