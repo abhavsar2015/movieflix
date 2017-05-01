@@ -1,35 +1,28 @@
 /**
  * Created by Apurv on 4/19/2017.
  */
-(function (angular) {
+(function () {
     'use strict';
     var myApp=angular.module('myApp')
-    myApp.controller('loginController', function( $scope,$http,$q,$location) {
+    myApp.controller('loginController',loginController);
+    loginController.$inject=['$location','restServices','mySer'];
+    function loginController( $location,restServices,mySer) {
 
         var self = this;
-        $scope.user={empId:null,userName:'',password:'',position:''};
-        $scope.userName='';
-        $scope.password='';
-        var users=[];
-        $scope.usered=[];
-        console.log($scope.user.userName);
-        var REST_SERVICE_URI = '';
-        $scope.parJson = function ($scope) {
-            return JSON.parse($scope.users);
-        }
+        self.user={empId:null,userName:'',password:'',position:''};
+        self.userName='';
+        self.password='';
 
-        $scope.submit= function cl() {
-            console.log($scope.user.userName);
-            REST_SERVICE_URI = 'http://localhost:8082/Movie/employee/'+$scope.user.userName;
+        self.usered=[];
+        console.log(self.user.userName);
+        self.submit= function() {
 
             fetchAllUsers1();
-            $scope.usered = users;
-            console.log(users.userName + $scope.user.userName);
 
 
         }
 
-        function fetchAllUsers() {
+       /* function fetchAllUsers() {
             var deferred = $q.defer();
             console.log(REST_SERVICE_URI);
             $http.get(REST_SERVICE_URI)
@@ -45,16 +38,19 @@
 
             return deferred.promise;
         }
-
+*/
 
         function fetchAllUsers1(){
-            fetchAllUsers()
+            restServices
+                .fetchOneUser(self.user.userName)
                 .then(
                     function(d) {
-                        users = d;
-                        if ((users.userName === $scope.user.userName) && (users.passWord === $scope.user.password)) {
+                        self.users = d[0];
+                        if ((self.users.userName === self.user.userName) && (self.users.passWord === self.user.password)) {
                             console.log('login_successful');
-                            $location.path("/home" ).replace();
+                            $location.path("/home" );
+                            mySer.setUser(self.users.userName);
+
                         }
                         else {
                             console.log('login_unsuccessful');
@@ -67,5 +63,6 @@
                 );
 
         }
-    });
-})(window.angular);
+    };
+
+})();

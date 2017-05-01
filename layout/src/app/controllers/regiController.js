@@ -1,7 +1,7 @@
 /**
  * Created by Apurv on 4/21/2017.
  */
-(function (angular) {
+(function () {
     'use strict';
     var myApp=angular.module('myApp')
     myApp.controller('regiController',regiController);
@@ -9,7 +9,14 @@
         function regiController(restServices, $location) {
 
         var self = this;
-        self.user={userName:'',passWord:'',emailId:''};
+          self.message = "";
+
+            self.user = {
+                userName: "",
+                passWord: "",
+                emailId:'',
+                confirmPassword: ""
+            };
         self.userName='';
         self.password='';
         self.users=[];
@@ -55,4 +62,24 @@
 
         }
     };
-})(window.angular)
+    myApp.directive("compareTo", compareTo);
+     function compareTo() {
+        return {
+            require: "ngModel",
+            scope: {
+                otherModelValue: "=compareTo"
+            },
+            link: function(scope, element, attributes, ngModel) {
+
+                ngModel.$validators.compareTo = function(modelValue) {
+                    return modelValue == scope.otherModelValue;
+                };
+
+                scope.$watch("otherModelValue", function() {
+                    ngModel.$validate();
+                });
+            }
+        };
+    };
+
+})()

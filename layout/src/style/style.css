@@ -7,16 +7,23 @@ body {
     background-size: cover;
     padding: 60px;
     background-color: black;
-      color: black;
+    color: black;
 }
-a{
+h2{
+    color: red;
+    font-weight: bold;
+}
+span{
+    color: wheat;
+}
+.at{
     text-decoration:none;
     color:#cc0000;
     display:inline-block;
     text-align:center;
 }
 
-a.button{
+.at.button{
     background-color:#cc0000;
     border:1px solid #660000;
     border-radius:5px;
@@ -24,11 +31,11 @@ a.button{
     text-align:center;
     padding:10px 10px 10px 10px;
 }
-a.button:active,a.button:focus,a.button:hover{
+.at.button:active,a.button:focus,a.button:hover{
     background-color:#ee0000;
     margin-top:auto;
 }
-a.button:hover{
+.at.tbutton:hover{
     border:1px solid #000000;
 }
 
@@ -95,6 +102,21 @@ label {
     background: tomato;
 
 }
+#imaginary_container{
+    margin-top:20%; /* Don't copy this */
+}
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+    border-right:0;
+    box-shadow:0 0 0;
+    border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
 .content {
     width:960px;
     background: #F0F0F0;
@@ -103,11 +125,11 @@ label {
     margin: 40px auto;
 }
 .imgHo {
-    position: relative;
+    positon: relative;
     float: left;
-    width:  150px;
-    height: 150px;
-    background-position: 100% 100%;
+    width:  200px;
+    height: 250px;
+
     background-repeat:   no-repeat;
     background-size:     cover;
     margin-left: 10px;
@@ -115,9 +137,21 @@ label {
     margin-top:70px;
 }
 
+img {
 
+    height:200px;
+    width: 200px;
+}
 
+.a{
+    margin-left: 10px;
+    margin-botom: 10px;
+    margin-top:70px;
+    positon: relative;
+    float: left;
+    font-size: 15px;
 
+}
 
 .panel-default {
     opacity: 0.9;

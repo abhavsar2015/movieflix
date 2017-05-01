@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/angular-carousel/dist/angular-carousel.css">
+    <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick-theme.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <!-- endinject -->
+
+    <!-- vendor:css -->
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="style/style.css">
+    <!-- endinject -->
+
+    <!-- app:css -->
+    <!-- endinject -->
+
+</head>
+
+<body>
+<div><ng-view></ng-view>
+</div>
+<!-- bower:js -->
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
+<script src="/bower_components/angular-messages/angular-messages.js"></script>
+<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="/bower_components/angular-touch/angular-touch.js"></script>
+<script src="/bower_components/angular-carousel/dist/angular-carousel.js"></script>
+<script src="/bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="/bower_components/angular-slick/dist/slick.js"></script>
+<!-- endinject -->
+
+<!-- vendor:js -->
+<!-- endinject -->
+
+<!-- inject:js -->
+<script src="app/routingConfig.js"></script>
+<script src="app/controllers/loginController.js"></script>
+<script src="app/controllers/movieController.js"></script>
+<script src="app/controllers/regiController.js"></script>
+<script src="app/controllers/searchController.js"></script>
+<script src="app/controllers/showController.js"></script>
+<script src="app/controllers/updateController.js"></script>
+<script src="app/services/mySer.js"></script>
+<script src="app/services/restServices.js"></script>
+<!-- endinject -->
+
+<!-- app:js -->
+<!-- endinject -->
+
+</body>
+</html>
