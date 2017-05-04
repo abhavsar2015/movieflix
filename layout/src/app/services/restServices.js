@@ -3,8 +3,8 @@
     var App;
     App = angular.module('myApp');
         App.service('restServices', restServices);
-    restServices.$inject=['$http','$q'];
-    function restServices($http,$q) {
+    restServices.$inject=['$http','$q','CONFIG'];
+    function restServices($http,$q,CONFIG) {
         var self=this;
         self.fetchAllMovies=fetchAllMovies;
         self.fetchOneUser=fetchOneUser;
@@ -15,7 +15,7 @@
        function fetchAllMovies() {
            var deferred = $q.defer();
 
-           $http.get('http://localhost:8082/Movie/employee/user')
+           $http.get(CONFIG.API-HOST+'/employee/user')
                .then(
                    function (response) {
                        deferred.resolve(response.data);
@@ -32,7 +32,7 @@
             var deferred = $q.defer();
 
             $http({
-                url: 'http://localhost:8082/Movie/movie/'+id,
+                url: CONFIG.API-HOST+'/movie/'+id,
                 method: "PUT",
                 data: data,
 
@@ -50,12 +50,12 @@
             return deferred.promise;
         }
        function fetchOneUser(id) {
-           $http.get('http://localhost:8082/Movie/employee/'+id).then(sucessFn, failFn);
+           $http.get(CONFIG.API-HOST+'/employee/'+id).then(sucessFn, failFn);
            return deferred.promise;
        }
         function addNewUser(data) {
             $http({
-                url: 'http://localhost:8082/Movie/employee/login',
+                url: CONFIG.API-HOST+'/employee/login',
                 method: "POST",
                 data: data,
                 headers: {'Content-Type': 'application/json '}
