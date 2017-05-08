@@ -1,0 +1,62 @@
+<html ng-app='myApp' xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body  >
+<div  data-ng-controller="addController as sc">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Movie Flix</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li ><a href="#!/home">Home</a></li>
+                <li><a href="#!/Search">Search</a></li>
+                <li class="active"><a href="#!/add">AddMovie</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><a href="#!/login" ng-click="sc.logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="card card-inverse" >
+        <div class="container">
+            <div class="row row-centered">
+                <div class="panel panel-default">
+
+                        <form class="form-horizontal" name="myForm" role="form" data-ng-submit="sc.add()">
+                                <div class="card-text"><label >Poster-Link:</label><input id="input-3" name="input-3" placeholder="Enter Poster Link" ng-model="sc.movie.poster" class="form-control" required ></div>
+                                <div class="card-text"><label >Title:</label><input id="input-3" name="input-3" ng-model="sc.movie.title" placeholder="Enter Title" class="form-control" required></div>
+                                <div class="card-text"><label>Plot:</label><textarea ng-model="sc.movie.plot" class="form-control" required placeholder="Enter Plot" row="3"></textarea></div>
+                                <div class="card-text"><label >Awards:</label><input id="input-3" name="input-3" ng-model="sc.movie.awards" placeholder="Enter Awards" class="form-control" required></div>
+                                <div class="card-text"><label >Year:</label><input id="input-3" name="input-3" ng-model="sc.movie.year" placeholder="Enter year of realease" class="form-control" required></div>
+                                <div class="card-text"><label >rated:</label><input id="input-3" name="input-3" ng-model="sc.movie.rated" placeholder="Enter rated" class="form-control" required></div>
+                                <div class="card-text"><label >Released:</label><input id="input-3" name="input-3" ng-model="sc.movie.released" placeholder="Is it Release?" class="form-control" required></div>
+                                <div class="card-text"><label >Runtime:</label><input id="input-3" name="input-3" ng-model="sc.movie.runtime" placeholder="How Long It os?" class="form-control" required></div>
+                                <div class="card-text"><label >Genre:</label><input id="input-3" name="input-3" ng-model="sc.movie.genre" placeholder="Enter genre" class="form-control" required></div>
+                                <div class="card-text"><label >Directors:</label><input id="input-3" name="input-3" ng-model="sc.movie.director" placeholder="Enter directors" class="form-control" required/></div>
+                                <div class="card-text"><label >Writer:</label><input id="input-3" name="input-3" ng-model="sc.movie.writer" placeholder="Enter writers" class="form-control" required></div>
+                                <div class="card-text"><label >Actors:</label><input id="input-3" name="input-3" ng-model="sc.movie.actors"  placeholder="Enter Actors" class="form-control" required></div>
+                                <div class="card-text"><label >Country:</label><input id="input-3" name="input-3" ng-model="sc.movie.country" placeholder="Enter Country" class="form-control" required></div>
+                                <div class="card-text"><label > Language:</label><input id="input-3" name="input-3" ng-model="sc.movie.language" placeholder="Enter Language" class="form-control" required></div>
+                                <div class="card-text"><label >Meta Score:</label ><input id="input-3" name="input-3" ng-model="sc.movie.metaScore" placeholder="Enter Meta Score" class="form-control" required></div>
+                                <div class="card-text"><label >Imdb Id:</label><input id="input-3" name="input-3" ng-model="sc.movie.imdbId" placeholder="Enter Imdb Id" class="form-control" required></div>
+                                <div class="card-text"><label >Imdb Rating:</label><input id="input-3" name="input-3" ng-model="sc.movie.imdbRating" placeholder="Enter Imdb Rating" class="form-control" required></div>
+                                <div class="card-text"><label >Imdb Votes:</label> <input id="input-3" name="input-3" ng-model="sc.movie.imdbVotes" placeholder="Enter Imdb votes" class="form-control" required></div>
+                                <div class="card-text"><label >Type:</label> <input id="input-3" name="input-3" ng-model="sc.movie.type" placeholder="Enter Type" class="form-control" required></div>
+                                <div class="card-text"><div class="btn-group"><input type="submit" class="btn btn-danger navbar-btn"/><a href="#!/home" class="btn btn-danger navbar-btn">Home</a></div>
+                                </div>
+                        </form>
+
+                </div>
+
+            </div>
+
+        </div></div>
+</div>
+
+</body>
+</html>

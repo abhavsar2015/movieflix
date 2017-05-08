@@ -6,6 +6,7 @@
 
 **/node_modules
 **/bower_components
+##**/build
 **/.tmp
 **/.dist
 **/.sass-cache

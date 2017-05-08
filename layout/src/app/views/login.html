@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Movie Flix</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#!/registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+</head>
+<body >
+
+<div  data-ng-controller="loginController as lc">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-7">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-lock"></span> Login</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" name="loginForm" role="form" data-ng-submit="lc.submit()" >
+                        <div ng-show='lc.createFailed' class="f-error"> Login Unsuccessful. Please Try Again.</div>
+                        <div ng-show='lc.notUser' class="f-error">User not available. Please Signup.</div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">
+                                Username</label>
+                            <div class="col-sm-9">
+                                <input  data-ng-model="lc.user.userName" name="userName" class="form-control" id="inputEmail3" placeholder="Username" required>
+                                <div ng-messages="loginForm.userName.$error" ng-if='loginForm.userName.$dirty' >
+                                    <div ng-message="required" class="f-error">Required</div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">
+                                Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" data-ng-model="lc.user.password" name="passWord" class="form-control" id="inputPassword3" placeholder="Password" required>
+                                <div ng-messages="loginForm.passWord.$error" ng-if='loginForm.passWord.$dirty' >
+                                    <div ng-message="required" class="f-error">Required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"/>
+                                        Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group last">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <input type="submit"  class="btn btn-success btn-sm">
+                                    </input>
+                                <button type="reset" class="btn btn-default btn-sm">
+                                    Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="panel-footer">
+                    Not Registred? <a href="#!/registration">Register here</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+</body>
+</html>

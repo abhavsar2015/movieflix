@@ -1,0 +1,5 @@
+bower install#*             not-cached https://github.com/tombigel/detect-zoom.git#*
+bower install#*                resolve https://github.com/tombigel/detect-zoom.git#*
+bower install#*               download https://github.com/tombigel/detect-zoom/archive/v1.0.4.tar.gz
+bower install#*                extract archive.tar.gz
+bower install#*               resolved https://github.com/tombigel/detect-zoom.git#1.0.4
