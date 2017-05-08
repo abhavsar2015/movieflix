@@ -1,12 +1,14 @@
 package com.apurv.repository;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -22,9 +24,12 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionTemplate;
 
+import com.apurv.entity.Average;
+import com.apurv.entity.Comment;
 import com.apurv.entity.Login;
 //import com.apurv.entity.Employee;
 import com.apurv.entity.Movie;
+import com.apurv.entity.Rate;
 import com.apurv.services.EmployeeService;
 
 @Repository
@@ -56,6 +61,34 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 		return tq.getResultList();
 	}
 	
+	@Override
+	@Transactional
+	public String addRate(Rate rate) {
+		EntityManager em1 = getEm();
+		//em1.getTransaction().begin();
+   	   em1.persist(rate);
+	   return rate.getRateId();
+	}
+	
+	@Override
+	@Transactional
+	public String deleteMovie(String movieId) {
+		Movie movie = em.find(Movie.class, movieId);
+		EntityManager em1 = getEm();
+		//em1.getTransaction().begin();
+   	    em1.remove(movie);
+	   return "true";
+	}
+	
+	@Override
+	@Transactional
+	public String addComment( Comment comment) {
+		EntityManager em1 = getEm();
+		//em1.getTransaction().begin();
+   	   em1.persist(comment);
+	   return comment.getCommentId();
+	}
+	
     @Override
     @Transactional
     public String addLogin(final Login login) {
@@ -63,6 +96,42 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 		//em1.getTransaction().begin();
    	   em1.persist(login);
 	   return login.getLoginId();
+	}
+    
+    @Override
+    @Transactional
+    public List<Average> getAverage(List<String> titles) {
+	   EntityManager em1 = getEm();
+	   String qlString = "SELECT AVG(r.rate) FROM Rate r WHERE r.title = :Title";
+	   Query q = em.createQuery(qlString);
+	   List<Average> avg=new LinkedList<Average>();
+	   for(int i=0;i<titles.size();i++)
+	   {
+		   Average a1=new Average();
+		   q.setParameter("Title", titles.get(i));
+		   List<Object> result= q.getResultList();
+		   System.out.println("hiiiiiiii"+result.get(0));
+		   a1.setTitle(titles.get(i));
+		   
+		   if(result.equals(null))
+		   {
+		   a1.setAverage("0.0");
+		   }
+		   else if(result.get(0)==null)
+		   {
+			   a1.setAverage("0.0");
+		   }
+		   else
+		   {
+			   a1.setAverage(result.get(0).toString());
+			   			   
+		   }
+		   avg.add(a1);
+	      // a1.setTitle("");
+	       //a1.setAverage("");
+	   }
+	   
+   	   return avg;
 	}
    
 	@Override

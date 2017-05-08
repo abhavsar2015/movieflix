@@ -19,8 +19,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Feature;
 @Entity
 @Table
-//@NamedQueries({
- //  @NamedQuery(name="Employee.findAll",query="SELECT e FROM Employee e ORDER BY e.psition ASC")})
+@NamedQueries({
+   @NamedQuery(name="Movie.findAll",query="SELECT e FROM Movie e ORDER BY e.title ASC")})
 public class Movie {  
 	
 	
@@ -32,6 +32,7 @@ public class Movie {
 		private String imdbId;
 		private String imdbRating;
 		private String imdbVotes;
+		private String type;
 		@OneToMany(fetch = FetchType.EAGER,cascade = {CascadeType.ALL})
 		@JsonFormat(with = Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
 		private List<Actor> actors;
@@ -51,7 +52,12 @@ public class Movie {
 		@JsonFormat(with = Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
 		private List<Genre> genre;
 		
-		
+		public String getType() {
+			return type;
+		}
+		public void setType(String type) {
+			this.type = type;
+		}
 		public String getPoster() {
 			return poster;
 		}
