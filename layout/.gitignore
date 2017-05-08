@@ -6,7 +6,11 @@
 
 **/node_modules
 **/bower_components
+<<<<<<< HEAD
 **/build
+=======
+##**/build
+>>>>>>> movieui
 **/.tmp
 **/.dist
 **/.sass-cache

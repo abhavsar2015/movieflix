@@ -32,6 +32,7 @@ public class Movie {
 		private String imdbId;
 		private String imdbRating;
 		private String imdbVotes;
+		private String type;
 		@OneToMany(fetch = FetchType.EAGER,cascade = {CascadeType.ALL})
 		@JsonFormat(with = Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
 		private List<Actor> actors;
@@ -51,7 +52,12 @@ public class Movie {
 		@JsonFormat(with = Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
 		private List<Genre> genre;
 		
-		
+		public String getType() {
+			return type;
+		}
+		public void setType(String type) {
+			this.type = type;
+		}
 		public String getPoster() {
 			return poster;
 		}

@@ -4,13 +4,19 @@
     <title>Title</title>
 
 </head>
+<<<<<<< HEAD
 <body   >
+=======
+<body    >
+<div data-ng-controller="showController as sc">
+>>>>>>> movieui
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Movie Flix</a>
         </div>
         <ul class="nav navbar-nav">
+<<<<<<< HEAD
             <li class="active"><a href="#!/home">Home</a></li>
             <li><a href="#!/Search">Search</a></li>
 
@@ -18,20 +24,40 @@
         <ul class="nav navbar-nav navbar-right">
 
             <li><a href="#!/login"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+=======
+            <li><a href="#!/home">Home</a></li>
+            <li><a href="#!/Search">Search</a></li>
+            <li><a href="#!/add" ng-show="sc.user">AddMovie</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="#!/login" ng-click="sc.logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+>>>>>>> movieui
         </ul>
     </div>
 </nav>
 
 
+<<<<<<< HEAD
 </div >
+=======
+>>>>>>> movieui
 <div class="card card-inverse" >
     <div class="container">
         <div class="row row-centered">
               <div class="panel panel-default">
+<<<<<<< HEAD
                   <div data-ng-controller="showController as sc">
 <div class="cent"><img class="card-img" style="float-displace: 1ch" src="{{sc.movie.poster}}" alt="Card image">
     <div class="card-img-overlay">
         <h4 class="card-title" style="font-weight: bold">{{sc.movie.title}}</h4>
+=======
+
+<div class="cent"><img class="card-img" style="float-displace: 1ch" src="{{sc.movie.poster}}" alt="Card image">
+    <div class="card-img-overlay">
+        <h4 class="card-title" style="font-weight: bold">{{sc.movie.title}}</h4>
+
+>>>>>>> movieui
         <p class="card-text">{{sc.movie.plot}}</p>
         <p class="card-text"> <label >Awards:</label>{{sc.movie.awards}}</p>
         <p class="card-text"> <label >Year:</label>{{sc.movie.year}}</p>
@@ -50,10 +76,17 @@
     <p class="card-text">    <label >Imdb Rating:</label><input id="input-3" name="input-3" value="{{sc.movie.imdbRating}}" class="rating-loading"></p>
     <p class="card-text">     <label >Imdb Votes:</label> {{sc.movie.imdbVotes}}</p>
 
+<<<<<<< HEAD
     <p class="card-text"><div class="btn-group"><a href="#!/home" class="btn btn-danger navbar-btn">Home</a><a ng-show="sc.user" href='#!/update/{{sc.id}}' class="btn btn-danger navbar-btn">Update</a><a href="#!/Search" class="btn btn-danger navbar-btn">Search</a></div></p>
 </div>
 </div>
 
+=======
+    <p class="card-text"><div class="btn-group"><a href="#!/home" class="btn btn-danger navbar-btn">Home</a><a href="#!/home" ng-click="sc.delete()" ng-show="sc.user" class="btn btn-danger navbar-btn">Delete</a><a href="#!/rate/{{sc.id}}" class="btn btn-danger navbar-btn">Rate It</a><a ng-show="sc.user" href='#!/update/{{sc.id}}' class="btn btn-danger navbar-btn">Update</a><a href="#!/Search" class="btn btn-danger navbar-btn">Search</a></div></p>
+</div>
+
+
+>>>>>>> movieui
 </div>
 
 </div>

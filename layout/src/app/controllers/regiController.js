@@ -15,14 +15,21 @@
                 userName: "",
                 passWord: "",
                 emailId:'',
+<<<<<<< HEAD
                 confirmPassword: ""
             };
         self.userName='';
         self.password='';
+=======
+
+            };
+        self.confirmPassword= '';
+>>>>>>> movieui
         self.users=[];
         self.data= { "userName" : self.user.userName ,"passWord":self.user.passWord,"emailId":self.user.emailId};
 
         self.submit= function cl() {
+<<<<<<< HEAD
             fetchAllUsers1();
         }
 
@@ -50,6 +57,23 @@
             //
             function fetchAllUsers1(){
             restServices.addNewUser(self.data)
+=======
+            if(self.user.userName!=='') {
+                fetchAllUsers1();
+            }
+            else
+            {
+                console.log("error")
+            }
+        };
+        self.reset = function(form) {
+                form.$setPristine();
+                form.$setUntouched();
+
+        };
+        function fetchAllUsers1(){
+            restServices.addNewUser(self.user)
+>>>>>>> movieui
                 .then(function(d) {
                         self.users = d;
                         console.log('registration');
@@ -61,7 +85,11 @@
                 );
 
         }
+<<<<<<< HEAD
     };
+=======
+        };
+>>>>>>> movieui
     myApp.directive("compareTo", compareTo);
      function compareTo() {
         return {
