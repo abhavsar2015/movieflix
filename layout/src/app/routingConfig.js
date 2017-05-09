@@ -3,17 +3,9 @@
  */
 (function () {
     'use strict';
-<<<<<<< HEAD
-    var myApp=angular.module('myApp',['ngRoute','slick','ngMessages']);
-    myApp.config(function($routeProvider) {
-            $routeProvider
-
-
-=======
     var myApp=angular.module('myApp',['ngRoute','slick','ngMessages','ngCookies','ngAnimate', 'ngSanitize', 'ui.bootstrap']);
     myApp.config(function($routeProvider,$httpProvider) {
             $routeProvider
->>>>>>> movieui
                 .when('/registration', {
                     templateUrl : 'app/views/Registration.html',
                     controller : 'regiController'
@@ -35,8 +27,6 @@
                     templateUrl : 'app/views/update.html',
                     controller : 'updateController'
                 })
-<<<<<<< HEAD
-=======
                 .when('/add', {
                     templateUrl : 'app/views/addMovie.html',
                     controller : 'addController'
@@ -45,7 +35,6 @@
                     templateUrl : 'app/views/rateMovie.html',
                     controller : 'rateController'
                 })
->>>>>>> movieui
                 .when('/login', {
                     templateUrl : 'app/views/login.html',
                     controller : 'loginController'
@@ -54,17 +43,10 @@
                 redirectTo : '/login'
             });
 
-<<<<<<< HEAD
-
-        }
-
-    );
-=======
         $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
         }
 
     );
 
 
->>>>>>> movieui
 })();

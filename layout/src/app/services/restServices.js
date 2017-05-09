@@ -10,23 +10,16 @@
         self.fetchOneUser=fetchOneUser;
         self.addNewUser=addNewUser;
         self.updateMovie=updateMovie;
-<<<<<<< HEAD
-
-       var deferred = $q.defer();
-       function fetchAllMovies() {
-           var deferred = $q.defer();
-
-           $http.get(CONFIG.API-HOST+'/employee/user')
-=======
         self.addNewMovie=addNewMovie;
         self.addNewRate=addNewRate;
         self.getAverage=getAverage;
         self.deleteMovie=deleteMovie;
+        self.addComment=addComment;
+        self.getAllComment=getAllComment;
        function fetchAllMovies() {
            var deferred = $q.defer();
 
            $http.get(CONFIG.API_HOST+'/employee/user')
->>>>>>> movieui
                .then(
                    function (response) {
                        deferred.resolve(response.data);
@@ -38,10 +31,43 @@
                );
 
            return deferred.promise;
-<<<<<<< HEAD
-       }
-=======
        };
+        function addComment(comment) {
+            var deferred = $q.defer();
+
+            $http({
+            url: CONFIG.API_HOST+'/employee/addComment',
+                method: "POST",
+                data:comment,
+                headers: {'Content-Type': 'application/json '}})
+                .then(
+                    function (response) {
+                        deferred.resolve(response.data);
+                    },
+                    function(errResponse){
+                        console.error('Error while fetching Users');
+                        deferred.reject(errResponse);
+                    }
+                );
+
+            return deferred.promise;
+        };
+        function getAllComment(title) {
+            var deferred = $q.defer();
+
+            $http.get(CONFIG.API_HOST+'/getAllComments/'+title)
+                .then(
+                    function (response) {
+                        deferred.resolve(response.data);
+                    },
+                    function(errResponse){
+                        console.error('Error while fetching Users');
+                        deferred.reject(errResponse);
+                    }
+                );
+
+            return deferred.promise;
+        };
         function deleteMovie(id) {
             var deferred = $q.defer();
 
@@ -61,16 +87,11 @@
 
             return deferred.promise;
         };
->>>>>>> movieui
         function updateMovie(id,data) {
             var deferred = $q.defer();
 
             $http({
-<<<<<<< HEAD
-                url: CONFIG.API-HOST+'/movie/'+id,
-=======
                 url: CONFIG.API_HOST+'/movie/'+id,
->>>>>>> movieui
                 method: "PUT",
                 data: data,
 
@@ -87,15 +108,6 @@
 
             return deferred.promise;
         }
-<<<<<<< HEAD
-       function fetchOneUser(id) {
-           $http.get(CONFIG.API-HOST+'/employee/'+id).then(sucessFn, failFn);
-           return deferred.promise;
-       }
-        function addNewUser(data) {
-            $http({
-                url: CONFIG.API-HOST+'/employee/login',
-=======
 
        function fetchOneUser(credentials) {
            console.log(CONFIG.API_HOST);
@@ -120,15 +132,11 @@
 
             $http({
                 url: CONFIG.API_HOST+'/employee/registration',
->>>>>>> movieui
                 method: "POST",
                 data: data,
                 headers: {'Content-Type': 'application/json '}
             }).then(function (response) {
                         deferred.resolve(response.data[0]);
-<<<<<<< HEAD
-                    },failFn);
-=======
                     },function (errResponse) {
                 deferred.reject(errResponse);
             });
@@ -180,7 +188,6 @@
             },function (errResponse) {
                 deferred.reject(errResponse);
             });
->>>>>>> movieui
             return deferred.promise;
         }
        function sucessFn(response) {

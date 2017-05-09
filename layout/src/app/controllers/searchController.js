@@ -6,17 +6,6 @@
     var myApp=angular.module('myApp');
 
     myApp.controller('searchController',searchController);
-<<<<<<< HEAD
-    searchController.$inject=['mySer'];
-    function searchController( mySer) {
-        var self=this;
-        self.movie = mySer.getAllMovie();
-        console.log(self.movie);
-        self.getFriendName = mySer.getName;
-        //self.route = $location.path();
-        var movie_poster ='';
-        self.movie_label ='';
-=======
     searchController.$inject=['mySer','restServices','$cookieStore'];
     function searchController( mySer,restServices,$cookieStore) {
         var self=this;
@@ -75,29 +64,16 @@
                     }
                 );
         };
->>>>>>> movieui
 
     };
     myApp.directive('myMovie', function() {
         return {
             restrict: 'E',
-<<<<<<< HEAD
-
-
-            scope: {
-                poster: '=',
-                title:'='
-
-            },
-            templateUrl: 'app/views/movieCard.html',
-
-=======
             scope: {
                 poster:'=',
                 title:'='
             },
             templateUrl: 'app/views/movieCard.html',
->>>>>>> movieui
         };
     });
 })();

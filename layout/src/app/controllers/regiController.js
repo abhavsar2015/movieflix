@@ -15,49 +15,13 @@
                 userName: "",
                 passWord: "",
                 emailId:'',
-<<<<<<< HEAD
-                confirmPassword: ""
-            };
-        self.userName='';
-        self.password='';
-=======
 
             };
         self.confirmPassword= '';
->>>>>>> movieui
         self.users=[];
         self.data= { "userName" : self.user.userName ,"passWord":self.user.passWord,"emailId":self.user.emailId};
 
         self.submit= function cl() {
-<<<<<<< HEAD
-            fetchAllUsers1();
-        }
-
-        //function fetchAllUsers() {
-           // var deferred = $q.defer();
-           // console.log(REST_SERVICE_URI);
-           // $http({
-           //     url: REST_SERVICE_URI,
-         //       method: "POST",
-              //  data: { "userName" : $scope.user.userName ,"passWord":$scope.user.passWord,"emailId":$scope.user.emailId},
-            //    headers: {'Content-Type': 'application/json '}
-          //  })
-               // .then(
-                 //   function (response) {
-                //        deferred.resolve(response.data[0]);
-                  //  },
-               //     function(errResponse){
-             //           console.error('Error while fetching Users');
-          //              deferred.reject(errResponse);
-                //    }
-              //  );
-
-            //return deferred.promise;
-        //}
-            //
-            function fetchAllUsers1(){
-            restServices.addNewUser(self.data)
-=======
             if(self.user.userName!=='') {
                 fetchAllUsers1();
             }
@@ -73,7 +37,6 @@
         };
         function fetchAllUsers1(){
             restServices.addNewUser(self.user)
->>>>>>> movieui
                 .then(function(d) {
                         self.users = d;
                         console.log('registration');
@@ -85,11 +48,7 @@
                 );
 
         }
-<<<<<<< HEAD
-    };
-=======
         };
->>>>>>> movieui
     myApp.directive("compareTo", compareTo);
      function compareTo() {
         return {

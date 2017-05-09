@@ -118,6 +118,13 @@ public class HomeController {
 	     String answer= empSer.updateMovie(movieId, movie);
 		 return new ResponseEntity<String>(answer, HttpStatus.OK);
 	    }
+	//========getAllComments
+		 @RequestMapping(value = "/getAllComments/{id}", method = RequestMethod.GET,produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+		 public ResponseEntity<List<Comment>> getAllComments(@PathVariable("id") String title) throws Exception {
+		     System.out.println(title);
+		     List<Comment> answer= empSer.getAllComments(title);
+			 return new ResponseEntity<List<Comment>>(answer, HttpStatus.OK);
+		    }
 	//========delete
 		 @RequestMapping(value = "/deleteMovie/{id}", method = RequestMethod.DELETE,produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 		 public ResponseEntity<String> deleteMovie(@PathVariable("id") String movieId) throws Exception {

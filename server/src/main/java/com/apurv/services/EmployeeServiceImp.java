@@ -40,6 +40,14 @@ EmployeeRepository repository;
 		//return login;
 	}
 	@Override
+	public List<Comment> getAllComments(String title) {
+		// TODO Auto-generated method stub
+		
+	    return repository.getAllComments(title); 
+		//Login login= em.find(Login.class, userNam
+		//return login;
+	}
+	@Override
 	public String deleteMovie(String movieId) {
 		// TODO Auto-generated method stub
 		

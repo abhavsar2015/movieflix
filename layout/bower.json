@@ -16,15 +16,11 @@
     "angular-bootstrap": "^2.5.0",
     "angular-touch": "^1.6.4",
     "angular-carousel": "^0.3.13",
-<<<<<<< HEAD
-    "angular-slick": "^0.2.1"
-=======
     "angular-slick": "^0.2.1",
     "angular-cookies": "^1.6.4",
     "angular-loader": "^1.6.4",
     "angular-animate": "^1.6.4",
     "angular-sanitize": "^1.6.4"
->>>>>>> movieui
   },
   "overrides": {
     "bootstrap": {

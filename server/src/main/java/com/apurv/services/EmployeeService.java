@@ -20,4 +20,5 @@ public interface EmployeeService {
    public String updateMovie(String movieId,Movie movie) throws Exception; 
    public List<Average> getAverage(List<String> titles) ;
    public String deleteMovie(String id) ;
+   public List<Comment> getAllComments(String title) ;
 }

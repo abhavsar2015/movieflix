@@ -70,6 +70,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 	   return rate.getRateId();
 	}
 	
+	
 	@Override
 	@Transactional
 	public String deleteMovie(String movieId) {
@@ -133,7 +134,37 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 	   
    	   return avg;
 	}
-   
+    @Override
+    @Transactional
+    public List<Comment> getAllComments(String title) {
+	   EntityManager em1 = getEm();
+	   String qlString = "SELECT r.comment,r.userName FROM Comment r WHERE r.title = :Title";
+	  // Query q = em.createQuery(qlString);
+	   List<Comment> avg=new LinkedList<Comment>();
+	  
+		  
+		  // List<Object> result= q.getResultList();
+		   //System.out.println(result);
+		   TypedQuery<Object[]> typedQuery = em.createQuery( qlString , Object[].class);
+		   typedQuery.setParameter("Title", title);
+		   
+		   List<Object[]> results = typedQuery.getResultList();
+		   System.out.println(results);
+		   for (Object[] result : results) {
+			   Comment a1=new Comment();
+			   a1.setTitle(title);
+			   a1.setComment(result[0].toString());
+			   a1.setUserName(result[1].toString());
+			   avg.add(a1);
+			  }
+		   
+		  
+	      // a1.setTitle("");
+	       //a1.setAverage("");
+	   
+	   
+   	   return avg;
+	}
 	@Override
 	public Movie getOne(String id) {
 		// TODO Auto-generated method stub

@@ -4,23 +4,6 @@
 (function () {
     'use strict';
     var myApp=angular.module('myApp');
-<<<<<<< HEAD
-    myApp.controller('movieController',['mySer','restServices', function( mySer,restServices){
-
-        var self = this;
-        self.search='';
-        self.isNullOrEmptyOrUndefined = function () {
-            if (self.search === "" || self.search === null || typeof self.search === "undefined") {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        };
-        fetchAllMovies();
-        function fetchAllMovies(){
-=======
     myApp.controller('movieController',movieController);
     movieController.$inject=['mySer','restServices','$cookieStore'];
      function movieController( mySer,restServices,$cookieStore){
@@ -72,29 +55,11 @@
                  );
          };
          function fetchAllMovies1(){
->>>>>>> movieui
             console.log("fetchAllUsers1");
             restServices.fetchAllMovies()
                 .then(
                     function(d) {
                         self.movie= d;
-<<<<<<< HEAD
-                        mySer.set(d);
-                       console.log(self.movie);
-                        self.dataLoaded = true;
-                        self.jet=mySer.getUser();
-                        console.log(self.jet);
-                            if(self.jet==='admin')
-                            {
-
-                                self.user=true;
-                            }
-                            else
-                            {
-                                self.user=false;
-                            }
-
-=======
                         self.dataLoaded = true;
                         self.result = [];
                         angular.forEach(self.movie, function(v) {
@@ -104,21 +69,13 @@
                         });
                         console.log(self.result)
                         getAverage1();
->>>>>>> movieui
                     },
                     function(errResponse){
                         console.error('Error while fetching Users');
                     }
                 );
-<<<<<<< HEAD
-
-        }
-
-}])
-=======
         };
 
 };
->>>>>>> movieui
 
 })();

@@ -29,22 +29,15 @@
                     <span class="glyphicon glyphicon-lock"></span> Login</div>
                 <div class="panel-body">
                     <form class="form-horizontal" name="loginForm" role="form" data-ng-submit="lc.submit()" >
-<<<<<<< HEAD:layout/src/app/views/login.html
-=======
                         <div ng-show='lc.createFailed' class="f-error"> Login Unsuccessful. Please Try Again.</div>
                         <div ng-show='lc.notUser' class="f-error">User not available. Please Signup.</div>
->>>>>>> movieui:layout/src/app/views/login.html
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label">
                                 Username</label>
                             <div class="col-sm-9">
                                 <input  data-ng-model="lc.user.userName" name="userName" class="form-control" id="inputEmail3" placeholder="Username" required>
                                 <div ng-messages="loginForm.userName.$error" ng-if='loginForm.userName.$dirty' >
-<<<<<<< HEAD:layout/src/app/views/login.html
-                                    <div ng-message="required">Required</div>
-=======
                                     <div ng-message="required" class="f-error">Required</div>
->>>>>>> movieui:layout/src/app/views/login.html
 
                                 </div>
                             </div>
@@ -55,11 +48,7 @@
                             <div class="col-sm-9">
                                 <input type="password" data-ng-model="lc.user.password" name="passWord" class="form-control" id="inputPassword3" placeholder="Password" required>
                                 <div ng-messages="loginForm.passWord.$error" ng-if='loginForm.passWord.$dirty' >
-<<<<<<< HEAD:layout/src/app/views/login.html
-                                    <div ng-message="required">Required</div>
-=======
                                     <div ng-message="required" class="f-error">Required</div>
->>>>>>> movieui:layout/src/app/views/login.html
                             </div>
                         </div>
                         <div class="form-group">
